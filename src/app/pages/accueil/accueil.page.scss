@@ -19,20 +19,17 @@
         }
     }
 }
-.menu-ctn{
-    --background: #F27980!important;
+.content{
+    background-color:#220242;
+    height:100%;
+    width:100%;
+    text-align:center
 }
-ion-menu{
-    --width: 250px;
-  }
-.item-side-menu{
-    --background: #F27980!important;
-}
-ion-label{
-    padding:10px;
-}
-
-.about{
-    margin-top:220px;
+.boutons{
     text-align:center;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center
 }

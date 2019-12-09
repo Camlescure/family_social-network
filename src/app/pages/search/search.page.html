@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="content">
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false" color="primary" (click)="toggleMenu()"></ion-menu-button>
+      </ion-buttons>
+    <div class="top-image">
+      <img src="assets/logo_violet.png"/>
+    </div>
+    <div class="search-et-btn" (click)="search()">
+      <textarea placeholder="Taper le nom d'un saoul"></textarea>
+      <div class="btn"><img src="assets/icon/loupe.png"/><span>Chercher</span></div>
+    </div>
+    <div class="promo">
+      <div *ngFor="let an of year; let i=index"><input type="checkbox" id="{{i}}" name="{{i}}" (change)="checkboxChanged(i, $event)" checked><label for="{{an}}">{{an}}</label></div>
+    </div>
+    <hr>
+    <div class="no-result" *ngIf="membresList == null">Aucun resultat à afficher</div>
+    <div class="results" *ngIf="membresList != null">
+      <div class="membre" *ngFor="let mbr of membresList; let even = even; let odd = odd" [ngClass] = "{odd: odd, even: even}" routerLink="/membre/{{mbr.nom}}">
+        <span class="name">{{ mbr.prenom }} {{ mbr.nom  }}</span>
+        <span class="IFI">{{ mbr.IFI }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

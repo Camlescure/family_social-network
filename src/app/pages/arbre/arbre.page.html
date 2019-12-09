@@ -1,0 +1,17 @@
+<ion-content>
+    <div class="content">
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false" color="primary" (click)="toggleMenu()"></ion-menu-button>
+      </ion-buttons>
+    <div class="top-image">
+      <img src="assets/logo_violet.png"/>
+    </div>
+    <table>
+      <tr *ngFor="let an of years">
+        <td class="year">{{ an }}</td>
+        <td>Jean Doe</td>
+      </tr>
+    </table>
+
+  </div>
+</ion-content>

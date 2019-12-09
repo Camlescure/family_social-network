@@ -1,3 +1,27 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-split-pane contentId="menu-content">
+    <ion-menu contentId="menu-content">
+      <ion-content class="menu-ctn">
+        <div class="top-image">
+          <img src="assets/logo.png"/>
+        </div>
+        <ion-list class="menu-ctn">
+            <ion-item class="item-side-menu" routerLink="/map" (click)="toggleMenu()">
+              <ion-icon name="globe"></ion-icon>
+              <ion-label>Carte des Saouls</ion-label>
+            </ion-item>
+            <ion-item class="item-side-menu" routerLink="/calendar" (click)="toggleMenu()">
+                <ion-icon name="calendar"></ion-icon>
+                <ion-label>Calendrier Saoul</ion-label>
+              </ion-item>
+            <ion-item class="item-side-menu" routerLink="/search" (click)="toggleMenu()">
+              <ion-icon name="search"></ion-icon>
+              <ion-label>Chercher un Saoul</ion-label>
+            </ion-item>
+        </ion-list>
+        <div class="about" routerLink="/about" (click)="toggleMenu()"> 
+          <span>A propos</span>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-split-pane>

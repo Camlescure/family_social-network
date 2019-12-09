@@ -1,0 +1,43 @@
+<ion-content>
+    <div class="content">
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false" color="primary" (click)="toggleMenu()"></ion-menu-button>
+        </ion-buttons>
+      <div class="top-image">
+        <img src="assets/logo_violet.png"/>
+      </div>
+      <div class="top">
+        <ion-avatar class="av">
+          <img src="assets/av.jpg"/>
+        </ion-avatar>
+        <div class="nom-etc">
+          {{ membre.prenom }} {{membre.nom}} <br>
+          {{ membre.IFI }} {{ membre.promo }} <br>
+          {{ membre.option }}
+        </div>
+      </div>
+      <div class="lignee">
+        <div *ngIf="membre.parrain" class="section" routerLink="/membre/{{parrain.nom}}">
+          Parrain:<div class="rect">{{ parrain.prenom }} {{ parrain.nom }}</div>
+        </div>
+        <div *ngIf="membre.fillot" class="section" routerLink="/membre/{{fillot.nom}}">
+            Fillot:<div class="rect">{{ fillot.prenom }} {{ fillot.nom }}</div>
+        </div>
+        <span routerLink="/arbre"><div>Voir l'arbre de lignée</div><ion-icon name="arrow-dropright-circle"></ion-icon></span>
+      </div>
+      <div class="autre">
+          <div *ngIf="membre.surnom" class="section">
+            <span>Surnom: </span><div>{{ membre.surnom }}</div>
+          </div>
+          <div *ngIf="membre.poste" class="section">
+            <span>Poste: </span><div>{{ membre.poste }}</div>
+          </div>
+          <div *ngIf="membre.entreprise" class="section">
+            <span>Entreprise: </span><div>{{ membre.entreprise }}</div>
+          </div>
+          <div *ngIf="membre.ville" class="section">
+            <span>Ville: </span><div>{{ membre.ville }}</div>
+          </div>
+        </div>
+    </div>
+</ion-content>
