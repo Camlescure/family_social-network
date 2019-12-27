@@ -28,11 +28,10 @@ export class SearchPage {
   checkboxChanged(i:number, ev: any): any{
     const an = this.year[i];
     let j = 0;
-    let list = this.membreService.membresList;
-    let list3;
-    let mbr;
+    let list2= this.membresList;
+    let mbr: Membre;
     if(ev.currentTarget.checked == false){
-      this.membresList.forEach(function(membre, index){
+      this.membresList.forEach(function(membre){
           if(membre.promo === an){
             j++; 
             mbr = membre;
@@ -40,7 +39,12 @@ export class SearchPage {
       })
       this.membresList.splice(0,j);
     } else {
-      this.membresList.push(mbr);
+      this.membreService.membresList.forEach(function(membre){
+        if(membre.promo === an){
+          list2.push(membre);
+        }
+      })
+      this.membresList = list2;
     }
   };
 
