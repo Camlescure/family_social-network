@@ -7,9 +7,9 @@
       <img src="assets/logo_violet.png"/>
     </div>
     <table>
-      <tr *ngFor="let an of years">
-        <td class="year">{{ an }}</td>
-        <td>Jean Doe</td>
+      <tr *ngFor="let membre of lignee">
+        <td class="year">{{ membre.promo }}</td>
+        <td>{{ membre.prenom }} {{ membre.nom }}</td>
       </tr>
     </table>
 

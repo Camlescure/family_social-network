@@ -23,7 +23,7 @@
         <div *ngIf="membre.fillot" class="section" routerLink="/membre/{{fillot.nom}}">
             Fillot:<div class="rect">{{ fillot.prenom }} {{ fillot.nom }}</div>
         </div>
-        <span routerLink="/arbre"><div>Voir l'arbre de lignée</div><ion-icon name="arrow-dropright-circle"></ion-icon></span>
+        <span routerLink="/arbre/{{membre.nom}}"><div>Voir l'arbre de lignée</div><ion-icon name="arrow-dropright-circle"></ion-icon></span>
       </div>
       <div class="autre">
           <div *ngIf="membre.surnom" class="section">

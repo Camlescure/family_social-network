@@ -20,26 +20,24 @@ export class MembreService {
 
   
 
-  getLigneeFromName(name: string): Membre{
-    let ligneeDesc: Membre[];
-    let ligneeMont: Membre[];
-    let i: number = 0;
+  getLigneeFromName(name: string): Membre[]{
+    let ligneeDesc: Membre[] = [];
+    let ligneeMont: Membre[] = [];
     let mbrForFils: Membre = this.getMembreByName(name); 
     let mbrForPar: Membre = this.getMembreByName(name); 
-    while(mbrForFils.fillot){
+    ligneeDesc.push(mbrForFils);
+    while (mbrForFils.fillot != "") {
       let fils = this.getMembreByName(mbrForFils.fillot);
-      ligneeDesc[i] = fils;
+      ligneeDesc.push(fils);
       mbrForFils = this.getMembreByName(fils.nom);
     }
-    i = 0;
-    while(mbrForPar.parrain){
+    while (mbrForPar.parrain != null && mbrForPar.parrain != "") {
       let par = this.getMembreByName(mbrForPar.parrain);
-      ligneeMont[i] = par;
+      ligneeMont.push(par);
       mbrForPar = this.getMembreByName(par.nom);
     }
     let lignee: Membre[] = ligneeMont.concat(ligneeDesc);
-    console.log(lignee);
-    return null;
+    return lignee;
   }
     
 
@@ -742,8 +740,99 @@ export class MembreService {
       poste: "", 
       entreprise: "", 
       ville: "", 
-      parrain: "Ibarra", 
+      parrain: "", 
       fillot: "Bellorgey", 
+      surnom: ""
+    }, 
+    {
+      promo: "2017",
+      IFI: "IFIE", 
+      prenom: "Emma", 
+      nom: "Bonecher",
+      option: "GSI", 
+      poste: "", 
+      entreprise: "", 
+      ville: "Lyon", 
+      parrain: "", 
+      fillot: "Amoureux", 
+      surnom: "Emma Bo"
+    },
+    {
+      promo: "2017",
+      IFI: "IFIE", 
+      prenom: "Théo", 
+      nom: "Buroni",
+      option: "", 
+      poste: "", 
+      entreprise: "", 
+      ville: "", 
+      parrain: "", 
+      fillot: "Boichat", 
+      surnom: "Burosex"
+    },
+    {
+      promo: "2017",
+      IFI: "IFIE", 
+      prenom: "Jérémy", 
+      nom: "Payan",
+      option: "GSI", 
+      poste: "", 
+      entreprise: "", 
+      ville: "Paris", 
+      parrain: "", 
+      fillot: "Riveaux", 
+      surnom: ""
+    },
+    {
+      promo: "2017",
+      IFI: "IFIE", 
+      prenom: "Grégoire", 
+      nom: "Richard",
+      option: "", 
+      poste: "", 
+      entreprise: "", 
+      ville: "Paris", 
+      parrain: "", 
+      fillot: "Nogue", 
+      surnom: ""
+    },
+    {
+      promo: "2017",
+      IFI: "IFIE", 
+      prenom: "Quentin", 
+      nom: "Jeannes",
+      option: "", 
+      poste: "", 
+      entreprise: "", 
+      ville: "Nantes", 
+      parrain: "", 
+      fillot: "Dubuc", 
+      surnom: "Qsaoul"
+    },
+    {
+      promo: "2017",
+      IFI: "IFIE", 
+      prenom: "Marie", 
+      nom: "Carrot",
+      option: "Polytechnique Montréal", 
+      poste: "", 
+      entreprise: "", 
+      ville: "", 
+      parrain: "", 
+      fillot: "Thiriat", 
+      surnom: ""
+    },
+    {
+      promo: "2017",
+      IFI: "IFIA", 
+      prenom: "Vincent", 
+      nom: "Autex",
+      option: "", 
+      poste: "", 
+      entreprise: "", 
+      ville: "", 
+      parrain: "", 
+      fillot: "Bariller", 
       surnom: ""
     }
   ]

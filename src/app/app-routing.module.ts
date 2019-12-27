@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   },
   {
-    path: 'arbre',
+    path: 'arbre/:membre_id',
     loadChildren: () => import('./pages/arbre/arbre.module').then( m => m.ArbrePageModule)
   },
 ];
