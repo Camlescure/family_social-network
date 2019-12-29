@@ -37,6 +37,7 @@ export class MembreService {
       mbrForPar = this.getMembreByName(par.nom);
     }
     let lignee: Membre[] = ligneeMont.concat(ligneeDesc);
+    lignee.sort((a,b) => a.promo.localeCompare(b.promo));
     return lignee;
   }
     
