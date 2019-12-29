@@ -43,9 +43,9 @@ export class SearchPage {
     }
   };
 
-  public handleInput(event) : void {
+  public handleInput(query: string) : void {
     this.items = Array.from(document.querySelector('.results').children);
-    const query = event.toLowerCase();
+    //const query = event.toLowerCase();
     requestAnimationFrame(() => {
         this.items.forEach(item => {
           const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
